@@ -79,10 +79,12 @@ fun DessertInfo(
         Text(
             text = stringResource(dessertName),
             modifier = modifier
-                .padding(top = 8.dp)
+                .padding(top = 8.dp),
+            color = MaterialTheme.colors.onSurface
         )
         Text(
-            text = "ID: ${stringResource(dessertId)}"
+            text = "ID: ${stringResource(dessertId)}",
+            color = MaterialTheme.colors.onSurface
         )
     }
 }
