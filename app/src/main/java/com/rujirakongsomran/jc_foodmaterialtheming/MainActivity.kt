@@ -6,9 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -16,6 +16,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.rujirakongsomran.jc_foodmaterialtheming.data.Dessert
+import com.rujirakongsomran.jc_foodmaterialtheming.data.desserts
 import com.rujirakongsomran.jc_foodmaterialtheming.ui.theme.JC_FoodMaterialThemingTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,6 +28,27 @@ class MainActivity : ComponentActivity() {
 
             }
         }
+    }
+}
+
+@Composable
+fun DessertApp() {
+    LazyColumn {
+        items(desserts) {
+            DessertItem(dessert = it)
+        }
+    }
+}
+
+@Composable
+fun DessertItem(dessert: Dessert, modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(8.dp)
+    ) {
+        DessertIcon(dessertIcon = dessert.imageResourceId)
+        DessertInfo(dessertName = dessert.name, dessertId = dessert.num)
     }
 }
 
@@ -41,7 +64,11 @@ fun DessertIcon(@DrawableRes dessertIcon: Int, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun DessertInfo(@StringRes dessertName: Int, dessertId: Int, modifier: Modifier = Modifier) {
+fun DessertInfo(
+    @StringRes dessertName: Int,
+    @StringRes dessertId: Int,
+    modifier: Modifier = Modifier
+) {
 
     Column {
         Text(
@@ -50,7 +77,7 @@ fun DessertInfo(@StringRes dessertName: Int, dessertId: Int, modifier: Modifier 
                 .padding(top = 8.dp)
         )
         Text(
-            text = stringResource(R.string.dessert_id, dessertId)
+            text = "ID: ${stringResource(dessertId)}"
         )
     }
 }
@@ -59,7 +86,7 @@ fun DessertInfo(@StringRes dessertName: Int, dessertId: Int, modifier: Modifier 
 @Composable
 fun DefaultPreview() {
     JC_FoodMaterialThemingTheme(darkTheme = false) {
-        //DessertIcon(dessertIcon = R.drawable.dessert_icon1_apam_balik)
-        DessertInfo(dessertId = 53049, dessertName = R.string.dessert_name_1)
+        //DessertIcon(dessertIcon = R.drawable.dessert_icon1_apam_balik
+        DessertApp()
     }
 }

@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">JC_FoodMaterialTheming</string>
     <string name="dessert_name_1">Apam balik</string>
-    <string name="dessert_id">ID: %d </string>
+    <string name="dessert_name_2">Apple &amp; Blackberry Crumble</string>
+
+    <string name="dessert_id">ID: %S </string>
+    <string name="dessert_id_1">53049</string>
+    <string name="dessert_id_2">52893</string>
 </resources>
