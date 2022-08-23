@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JC_FoodMaterialTheming</string>
+    <string name="dessert_name_1">Apam balik</string>
+    <string name="dessert_id">ID: %d </string>
 </resources>
