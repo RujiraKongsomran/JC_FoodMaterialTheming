@@ -3,13 +3,15 @@ package com.rujirakongsomran.jc_foodmaterialtheming
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.rujirakongsomran.jc_foodmaterialtheming.ui.theme.JC_FoodMaterialThemingTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,27 +19,27 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JC_FoodMaterialThemingTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun DessertIcon(@DrawableRes dessertIcon: Int, modifier: Modifier = Modifier) {
+    Image(
+        painter = painterResource(dessertIcon),
+        contentDescription = null,
+        modifier = Modifier
+            .size(64.dp)
+            .padding(8.dp)
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    JC_FoodMaterialThemingTheme {
-        Greeting("Android")
+    JC_FoodMaterialThemingTheme(darkTheme = false) {
+        DessertIcon(dessertIcon = R.drawable.dessert_icon1_apam_balik)
     }
 }
