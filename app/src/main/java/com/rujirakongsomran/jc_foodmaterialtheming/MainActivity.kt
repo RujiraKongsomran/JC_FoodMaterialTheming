@@ -6,9 +6,11 @@ import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -25,7 +27,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JC_FoodMaterialThemingTheme {
-
+                DessertApp()
             }
         }
     }
@@ -33,7 +35,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DessertApp() {
-    LazyColumn {
+    LazyColumn(
+        modifier = Modifier.background(MaterialTheme.colors.background)
+    ) {
         items(desserts) {
             DessertItem(dessert = it)
         }
@@ -46,6 +50,7 @@ fun DessertItem(dessert: Dessert, modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxWidth()
             .padding(8.dp)
+            .background(MaterialTheme.colors.surface)
     ) {
         DessertIcon(dessertIcon = dessert.imageResourceId)
         DessertInfo(dessertName = dessert.name, dessertId = dessert.num)
