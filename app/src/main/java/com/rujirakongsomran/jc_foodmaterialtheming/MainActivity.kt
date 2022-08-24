@@ -13,8 +13,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -38,12 +41,42 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun DessertApp() {
-    LazyColumn(
-        modifier = Modifier.background(MaterialTheme.colors.background)
+fun DessertTopAppBar(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .background(color = MaterialTheme.colors.primary),
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        items(desserts) {
-            DessertItem(dessert = it)
+        Image(
+            painter = painterResource(R.drawable.cupcake),
+            contentDescription = null,
+            modifier = modifier
+                .size(64.dp)
+                .padding(8.dp)
+        )
+        Text(
+            text = stringResource(R.string.app_name),
+            style = MaterialTheme.typography.h1
+        )
+    }
+}
+
+@Composable
+fun DessertApp() {
+    Scaffold(
+        topBar = {
+            DessertTopAppBar()
+        }
+    ) { contentPadding ->
+        LazyColumn(
+            modifier = Modifier
+                .background(MaterialTheme.colors.background)
+                .padding(contentPadding)
+        ) {
+            items(desserts) {
+                DessertItem(dessert = it)
+            }
         }
     }
 }
