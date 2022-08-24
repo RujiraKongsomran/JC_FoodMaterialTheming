@@ -90,9 +90,11 @@ fun DessertInfo(
             text = stringResource(dessertName),
             modifier = modifier
                 .padding(top = 8.dp),
+            style = MaterialTheme.typography.h2
         )
         Text(
             text = "ID: ${stringResource(dessertId)}",
+            style = MaterialTheme.typography.body1
         )
     }
 }
