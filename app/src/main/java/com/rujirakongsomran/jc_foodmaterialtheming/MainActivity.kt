@@ -50,7 +50,10 @@ fun DessertApp() {
 
 @Composable
 fun DessertItem(dessert: Dessert, modifier: Modifier = Modifier) {
-    Card(modifier = modifier.padding(8.dp)) {
+    Card(
+        modifier = modifier.padding(8.dp),
+        elevation = 4.dp
+    ) {
         Row(
             modifier = modifier
                 .fillMaxWidth()
