@@ -49,7 +49,7 @@ fun DessertTopAppBar(modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(
-            painter = painterResource(R.drawable.cupcake),
+            painter = painterResource(R.drawable.logo_icon),
             contentDescription = null,
             modifier = modifier
                 .size(64.dp)

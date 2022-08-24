@@ -2,8 +2,28 @@
     <string name="app_name">Dessert Lover</string>
     <string name="dessert_name_1">Apam balik</string>
     <string name="dessert_name_2">Apple &amp; Blackberry Crumble</string>
+    <string name="dessert_name_3">Apple Frangipan Tart</string>
+    <string name="dessert_name_4">Bakewell tart</string>
+    <string name="dessert_name_5">Banana Pancakes</string>
+    <string name="dessert_name_6">Battenberg Cake</string>
+    <string name="dessert_name_7">BeaverTails</string>
+    <string name="dessert_name_8">Blackberry Fool</string>
+    <string name="dessert_name_9">Bread and Butter Pudding</string>
+    <string name="dessert_name_10">Budino Di Ricotta</string>
+    <string name="dessert_name_11">Canadian Butter Tarts</string>
+    <string name="dessert_name_12">Carrot Cake</string>
 
     <string name="dessert_id">ID: %S </string>
     <string name="dessert_id_1">53049</string>
     <string name="dessert_id_2">52893</string>
+    <string name="dessert_id_3">52768</string>
+    <string name="dessert_id_4">52767</string>
+    <string name="dessert_id_5">52855</string>
+    <string name="dessert_id_6">52894</string>
+    <string name="dessert_id_7">52928</string>
+    <string name="dessert_id_8">52891</string>
+    <string name="dessert_id_9">52792</string>
+    <string name="dessert_id_10">52961</string>
+    <string name="dessert_id_11">52923</string>
+    <string name="dessert_id_12">52897</string>
 </resources>
