@@ -55,7 +55,6 @@ fun DessertItem(dessert: Dessert, modifier: Modifier = Modifier) {
             modifier = modifier
                 .fillMaxWidth()
                 .padding(8.dp)
-                .background(MaterialTheme.colors.surface)
         ) {
             DessertIcon(dessertIcon = dessert.imageResourceId)
             DessertInfo(dessertName = dessert.name, dessertId = dessert.num)
@@ -88,11 +87,9 @@ fun DessertInfo(
             text = stringResource(dessertName),
             modifier = modifier
                 .padding(top = 8.dp),
-            color = MaterialTheme.colors.onSurface
         )
         Text(
             text = "ID: ${stringResource(dessertId)}",
-            color = MaterialTheme.colors.onSurface
         )
     }
 }
